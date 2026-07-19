@@ -1,0 +1,63 @@
+{
+  "description": "Public Git repositories used for DriftGuard model development. Test repositories remain completely unseen during training.",
+  "created_at_utc": "2026-07-19T18:39:33.136250+00:00",
+  "repositories": [
+    {
+      "name": "microservices_demo",
+      "url": "https://github.com/GoogleCloudPlatform/microservices-demo.git",
+      "split": "train",
+      "primary_config_types": [
+        "kubernetes",
+        "helm",
+        "kustomize",
+        "terraform"
+      ]
+    },
+    {
+      "name": "kube_prometheus",
+      "url": "https://github.com/prometheus-operator/kube-prometheus.git",
+      "split": "train",
+      "primary_config_types": [
+        "kubernetes",
+        "jsonnet",
+        "yaml"
+      ]
+    },
+    {
+      "name": "terraform_aws_vpc",
+      "url": "https://github.com/terraform-aws-modules/terraform-aws-vpc.git",
+      "split": "train",
+      "primary_config_types": [
+        "terraform"
+      ]
+    },
+    {
+      "name": "kubernetes_examples",
+      "url": "https://github.com/kubernetes/examples.git",
+      "split": "validation",
+      "primary_config_types": [
+        "kubernetes",
+        "yaml"
+      ]
+    },
+    {
+      "name": "ansible_examples",
+      "url": "https://github.com/ansible/ansible-examples.git",
+      "split": "test",
+      "primary_config_types": [
+        "ansible",
+        "nginx",
+        "yaml"
+      ]
+    },
+    {
+      "name": "terraform_eks_blueprints",
+      "url": "https://github.com/aws-ia/terraform-aws-eks-blueprints.git",
+      "split": "test",
+      "primary_config_types": [
+        "terraform",
+        "kubernetes"
+      ]
+    }
+  ]
+}

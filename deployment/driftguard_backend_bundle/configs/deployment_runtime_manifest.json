@@ -1,0 +1,26 @@
+{
+  "bundle_version": "1.0.0",
+  "created_at_utc": "2026-07-19T23:13:44.144814+00:00",
+  "class_order": [
+    "benign",
+    "low",
+    "medium",
+    "high",
+    "critical"
+  ],
+  "baseline_text_builder": "build_baseline_text",
+  "transformer_text_builder": "build_transformer_text",
+  "primary_model": "structured",
+  "production_variant": "safety_hybrid",
+  "model_weights": {
+    "structured": 0.4,
+    "transformer": 0.35,
+    "text_baseline": 0.25
+  },
+  "model_paths": {
+    "text_baseline": "models/text_baseline_model.joblib",
+    "structured": "models/structured_model.joblib",
+    "transformer": "models/transformer_model"
+  },
+  "final_test_access_manifest": "outputs\\final_evaluation\\manifests\\final_test_access_manifest.json"
+}

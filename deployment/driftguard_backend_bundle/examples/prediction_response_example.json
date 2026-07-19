@@ -1,0 +1,18 @@
+{
+  "results": [
+    {
+      "diff_id": "example_001",
+      "safety_hybrid_prediction": "high",
+      "change_risk_score": 75.0,
+      "drift_band": "high",
+      "deterministic_rule_ids": "",
+      "decision_source": "weighted_model_ensemble"
+    }
+  ],
+  "commit_summary": {
+    "changed_fields": 2,
+    "changed_files": 1,
+    "commit_drift_score": 75.0,
+    "commit_drift_band": "high"
+  }
+}

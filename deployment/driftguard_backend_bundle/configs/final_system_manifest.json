@@ -1,0 +1,81 @@
+{
+  "created_at_utc": "2026-07-19T23:19:32.877209+00:00",
+  "system_name": "DriftGuard",
+  "system_version": "1.0.0",
+  "primary_model": "structured",
+  "production_variant": "safety_hybrid",
+  "class_order": [
+    "benign",
+    "low",
+    "medium",
+    "high",
+    "critical"
+  ],
+  "model_weights": {
+    "structured": 0.4,
+    "transformer": 0.35,
+    "text_baseline": 0.25
+  },
+  "final_test": {
+    "status": "EVALUATED_ONCE_WITH_FROZEN_PIPELINE",
+    "records": 68749,
+    "labeled_records": 61899,
+    "repositories": [
+      "ansible_examples",
+      "terraform_eks_blueprints"
+    ],
+    "sha256": "cff0f85db740a195366fb81cbad26ba34859f40fe12bf8695b263d1cdedb9b67"
+  },
+  "production_metrics": {
+    "variant": "safety_hybrid",
+    "records": 61899,
+    "accuracy": 0.4230278356677814,
+    "balanced_accuracy": 0.6232163672395359,
+    "macro_f1": 0.26926251846925403,
+    "weighted_f1": 0.45577288145417555,
+    "macro_pr_auc": 0.46390851583898296,
+    "log_loss": 1.7607154338440119,
+    "critical_precision": 0.05082053996823716,
+    "critical_recall": 0.6,
+    "critical_f1": 0.09370424597364568,
+    "high_critical_precision": 0.06142506142506143,
+    "high_critical_recall": 0.6,
+    "high_critical_f1": 0.11144130757800892,
+    "production_variant": true
+  },
+  "score_metrics": {
+    "labeled_records": 61899,
+    "accuracy": 0.42073377598991907,
+    "balanced_accuracy": 0.5697914477149577,
+    "macro_f1": 0.2538994081666087,
+    "weighted_f1": 0.45351625994195166,
+    "severity_rank_correlation": 0.27389401211984593,
+    "mean_absolute_anchor_error": 17.274685329234135,
+    "critical_precision": 0.05023547880690738,
+    "critical_recall": 0.6,
+    "critical_f1": 0.09270883631096088,
+    "high_critical_precision": 0.06142506142506143,
+    "high_critical_recall": 0.6,
+    "high_critical_f1": 0.11144130757800892
+  },
+  "deployment": {
+    "bundle_directory": "deployment\\driftguard_backend_bundle",
+    "bundle_zip": "deployment\\driftguard_backend_bundle.zip",
+    "api_module": "driftguard_inference.app:app",
+    "engine_class": "driftguard_inference.engine.DriftGuardEngine"
+  },
+  "output_files": {
+    "predictions": "outputs\\final_evaluation\\predictions\\final_test_predictions_and_scores.csv.gz",
+    "raw_model_results": "outputs\\final_evaluation\\tables\\final_test_raw_model_results.csv",
+    "hybrid_results": "outputs\\final_evaluation\\tables\\final_test_hybrid_variant_results.csv",
+    "commit_scores": "outputs\\final_evaluation\\tables\\final_test_commit_scores.csv.gz",
+    "repository_timeline": "outputs\\final_evaluation\\timelines\\final_test_repository_drift_timeline.csv.gz"
+  },
+  "post_test_changes": {
+    "model_selection_changed": false,
+    "model_weights_changed": false,
+    "rule_definitions_changed": false,
+    "score_thresholds_changed": false,
+    "drift_bands_changed": false
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "changes": [
+    {
+      "diff_id": "example_001",
+      "repository": "example-service",
+      "commit_hash": "abc123",
+      "field_path": "spec.template.spec.containers[0].securityContext.runAsNonRoot",
+      "old_value": "true",
+      "new_value": "false",
+      "configuration_type": "yaml",
+      "parser_mode": "structured",
+      "operation": "modified",
+      "file_path": "kubernetes/deployment.yaml",
+      "commit_message": "update container configuration"
+    },
+    {
+      "diff_id": "example_002",
+      "repository": "example-service",
+      "commit_hash": "abc123",
+      "field_path": "spec.resources.limits.memory",
+      "old_value": "512Mi",
+      "new_value": "",
+      "configuration_type": "yaml",
+      "parser_mode": "structured",
+      "operation": "deleted",
+      "file_path": "kubernetes/deployment.yaml",
+      "commit_message": "update container configuration"
+    }
+  ]
+}

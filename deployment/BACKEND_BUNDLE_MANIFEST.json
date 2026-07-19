@@ -1,0 +1,70 @@
+﻿{
+    "project":  "DriftGuard",
+    "version":  "1.0.0",
+    "repository":  "https://github.com/arush-07/DriftGuard",
+    "branch":  "ml",
+    "release_tag":  "v1.0.0-ml",
+    "bundle":  {
+                   "filename":  "driftguard_backend_bundle.zip",
+                   "size_bytes":  338770380,
+                   "sha256":  "83e93a4bc1036051e0a8f00f45890c6bcd581418cc3b13ff1080dc94e5b2e7fa"
+               },
+    "runtime":  {
+                    "api_module":  "driftguard_inference.app:app",
+                    "engine_class":  "driftguard_inference.DriftGuardEngine",
+                    "health_endpoint":  "GET /health",
+                    "prediction_endpoint":  "POST /predict"
+                },
+    "verified_environment":  {
+                                 "python":  "3.14",
+                                 "torch":  "2.11.0+cu128",
+                                 "torchvision":  "0.26.0+cu128",
+                                 "cuda":  "12.8",
+                                 "cuda_available":  true
+                             },
+    "verification":  {
+                         "engine_import":  "passed",
+                         "fastapi_import":  "passed",
+                         "smoke_test":  "passed",
+                         "final_test_status":  "EVALUATED_ONCE_WITH_FROZEN_PIPELINE",
+                         "post_test_threshold_tuning":  false,
+                         "post_test_model_reselection":  false
+                     },
+    "model_artifacts":  [
+                            {
+                                "path":  "models/structured_model.joblib",
+                                "size_bytes":  25405524,
+                                "sha256":  "6d7126046c6f407ef75fcd874b139c79f7e4e3e71239f4f091835426115762a2"
+                            },
+                            {
+                                "path":  "models/text_baseline_model.joblib",
+                                "size_bytes":  2500471,
+                                "sha256":  "b0f210bcc2026bea30c059d920bfcb80910bed1a0b1c1956f39663046dccaa8a"
+                            },
+                            {
+                                "path":  "models/transformer_model/config.json",
+                                "size_bytes":  996,
+                                "sha256":  "2c85910c55b9808dff648373c85409b547ad5513aa9c90ceb29258d4354ef6f1"
+                            },
+                            {
+                                "path":  "models/transformer_model/model.safetensors",
+                                "size_bytes":  333856004,
+                                "sha256":  "15e14ed077072099fd1059d5ef3c19c43c6da169029b59895ec43d01c9a0e549"
+                            },
+                            {
+                                "path":  "models/transformer_model/tokenizer.json",
+                                "size_bytes":  3707115,
+                                "sha256":  "689d4241ef6573cc96c487c854f17f1110e10cb4da7a9a2c028c78124db40f56"
+                            },
+                            {
+                                "path":  "models/transformer_model/tokenizer_config.json",
+                                "size_bytes":  593,
+                                "sha256":  "0ed19c5313974b8b6447cf5218d761a6738d40e9c9c845a3d7417409d6dae540"
+                            },
+                            {
+                                "path":  "models/transformer_model/training_args.bin",
+                                "size_bytes":  5265,
+                                "sha256":  "e4700488f07a4141bd145251d26f66047d07bab3bd7f447fda37cea7b65bc2d7"
+                            }
+                        ]
+}

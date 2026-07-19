@@ -1,0 +1,24 @@
+{
+  "random_seed": 42,
+  "class_order": [
+    "benign",
+    "low",
+    "medium",
+    "high",
+    "critical"
+  ],
+  "one_hot_minimum_frequency": 5,
+  "one_hot_maximum_categories": 100,
+  "maximum_value_processing_length": 4000,
+  "maximum_path_processing_length": 2000,
+  "maximum_commit_message_length": 2000,
+  "permutation_importance_repeats": 5,
+  "permutation_importance_top_n": 30,
+  "minimum_configuration_group_size": 10,
+  "selection_metrics": [
+    "macro_f1",
+    "critical_recall",
+    "high_critical_recall",
+    "balanced_accuracy"
+  ]
+}

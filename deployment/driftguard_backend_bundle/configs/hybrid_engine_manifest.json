@@ -1,0 +1,80 @@
+{
+  "created_at_utc": "2026-07-19T22:47:29.071532+00:00",
+  "engine_name": "DriftGuard Hybrid Risk Engine",
+  "production_variant": "safety_hybrid",
+  "primary_learned_model": "structured",
+  "model_weights": {
+    "structured": 0.4,
+    "transformer": 0.35,
+    "text_baseline": 0.25
+  },
+  "deterministic_rules": {
+    "TLS_DISABLED": {
+      "severity": "critical",
+      "confidence": 0.99,
+      "description": "TLS, SSL, HTTPS, or certificate protection appears to have been disabled or removed."
+    },
+    "AUTH_REMOVED": {
+      "severity": "critical",
+      "confidence": 0.99,
+      "description": "Authentication, authorization, credentials, or access-control configuration was removed."
+    },
+    "DEFAULT_CREDENTIALS": {
+      "severity": "critical",
+      "confidence": 0.99,
+      "description": "A credential field appears to use a common default or weak credential."
+    },
+    "OPEN_NETWORK_EXPOSURE": {
+      "severity": "critical",
+      "confidence": 0.98,
+      "description": "Network access appears open to every address or an unrestricted wildcard."
+    },
+    "PERMISSIVE_ACCESS_CONTROL": {
+      "severity": "critical",
+      "confidence": 0.98,
+      "description": "An access-control field appears to grant unrestricted or administrative access."
+    },
+    "INSECURE_PROTOCOL": {
+      "severity": "high",
+      "confidence": 0.96,
+      "description": "An insecure network protocol or obsolete transport-security version was introduced."
+    },
+    "PUBLIC_SERVICE_BINDING": {
+      "severity": "high",
+      "confidence": 0.94,
+      "description": "A service appears to have been bound publicly or exposed through a wildcard address."
+    },
+    "RESOURCE_LIMIT_REMOVED": {
+      "severity": "medium",
+      "confidence": 0.91,
+      "description": "A CPU, memory, storage, quota, or timeout limit appears to have been removed."
+    }
+  },
+  "consensus_settings": {
+    "two_model_high_critical_vote_rank": "high",
+    "single_critical_support_probability": 0.45
+  },
+  "validation_metrics": {
+    "records": 7040.0,
+    "accuracy": 0.7204545454545455,
+    "balanced_accuracy": 0.7910604448160747,
+    "macro_f1": 0.45162680296783275,
+    "weighted_f1": 0.7438600544735304,
+    "macro_pr_auc": 0.6755022463796997,
+    "log_loss": 1.625187119208943,
+    "critical_precision": 0.15476190476190477,
+    "critical_recall": 0.5,
+    "critical_f1": 0.23636363636363636,
+    "high_critical_precision": 0.20648967551622419,
+    "high_critical_recall": 0.8433734939759037,
+    "high_critical_f1": 0.33175355450236965
+  },
+  "validation_label_warning": "Repository-disjoint validation uses weak labels. Deterministic-rule metrics are not independent human-ground-truth estimates.",
+  "selection_policy": "Fixed safety architecture. It is not selected by maximizing weak-label validation performance.",
+  "final_test": {
+    "status": "SEALED_NOT_LOADED",
+    "sha256": "cff0f85db740a195366fb81cbad26ba34859f40fe12bf8695b263d1cdedb9b67",
+    "path": "C:\\Users\\Lenovo\\Desktop\\DriftGuard\\data\\clean\\test_final_evaluation_only.csv.gz"
+  },
+  "next_stage": "Convert hybrid class decisions into cumulative configuration-drift scores."
+}

@@ -1,0 +1,22 @@
+{
+  "random_seed": 42,
+  "class_order": [
+    "benign",
+    "low",
+    "medium",
+    "high",
+    "critical"
+  ],
+  "expected_validation_records": 7628,
+  "expected_final_test_records": 68749,
+  "transformer_inference_batch_size": 8,
+  "transformer_maximum_sequence_length": 256,
+  "review_queue_size": 500,
+  "selection_metrics": [
+    "macro_f1",
+    "critical_recall",
+    "high_critical_recall",
+    "macro_pr_auc",
+    "balanced_accuracy"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "force_regenerate": false,
+  "max_fields_per_snapshot": 5000,
+  "max_diffs_per_file_change": 750,
+  "max_value_characters": 4000,
+  "max_fallback_lines": 5000,
+  "ignore_comment_only_changes": true
+}

@@ -1,0 +1,18 @@
+{
+  "force_regenerate": false,
+  "valid_labels": [
+    "benign",
+    "low",
+    "medium",
+    "high",
+    "critical",
+    "unlabeled"
+  ],
+  "minimum_training_confidence": 0.85,
+  "manual_review_targets": {
+    "train": 700,
+    "validation": 400,
+    "test": 700
+  },
+  "random_seed": 42
+}

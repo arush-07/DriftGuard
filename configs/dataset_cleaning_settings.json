@@ -1,0 +1,37 @@
+{
+  "random_seed": 42,
+  "valid_splits": [
+    "train",
+    "validation",
+    "test"
+  ],
+  "valid_labels": [
+    "benign",
+    "low",
+    "medium",
+    "high",
+    "critical",
+    "unlabeled"
+  ],
+  "valid_operations": [
+    "added",
+    "deleted",
+    "modified"
+  ],
+  "valid_parser_modes": [
+    "structured",
+    "line_fallback"
+  ],
+  "minimum_core_training_confidence": 0.85,
+  "minimum_provisional_low_confidence": 0.7,
+  "provisional_low_to_strong_risk_ratio": 2.0,
+  "benign_to_risky_ratio": 2.0,
+  "temporal_development_fraction": 0.2,
+  "split_retention_priority": {
+    "train": 1,
+    "validation": 2,
+    "test": 3
+  },
+  "minimum_sample_weight": 0.1,
+  "maximum_sample_weight": 10.0
+}

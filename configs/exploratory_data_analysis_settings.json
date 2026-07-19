@@ -1,0 +1,9 @@
+{
+  "random_seed": 42,
+  "top_n_field_paths": 30,
+  "top_n_sensitive_terms": 30,
+  "top_n_rules": 20,
+  "top_n_configuration_types": 20,
+  "minimum_category_records": 10,
+  "figure_dpi": 150
+}

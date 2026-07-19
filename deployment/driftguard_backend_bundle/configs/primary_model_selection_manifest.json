@@ -1,0 +1,46 @@
+{
+  "selected_at_utc": "2026-07-19T22:37:02.710243+00:00",
+  "selection_stage": "repository_disjoint_validation",
+  "selected_primary_model": "structured",
+  "selection_metrics": [
+    "macro_f1",
+    "critical_recall",
+    "high_critical_recall",
+    "macro_pr_auc",
+    "balanced_accuracy"
+  ],
+  "selected_metrics": {
+    "rank": 1.0,
+    "model": null,
+    "records": 7040.0,
+    "accuracy": 0.6884943181818182,
+    "balanced_accuracy": 0.5237136870921312,
+    "macro_precision": 0.48652955173465406,
+    "macro_recall": 0.5237136870921312,
+    "macro_f1": 0.4896883777229128,
+    "weighted_f1": 0.7016931903197806,
+    "macro_pr_auc": 0.5140538189370568,
+    "critical_precision": 0.14545454545454545,
+    "critical_recall": 0.3076923076923077,
+    "critical_f1": 0.19753086419753085,
+    "high_critical_precision": 0.37,
+    "high_critical_recall": 0.4457831325301205,
+    "high_critical_f1": 0.40437158469945356,
+    "inference_seconds": 1.9016516999981832,
+    "probability_kind": null,
+    "log_loss": 4.175534646908608
+  },
+  "training_repositories": [
+    "kube_prometheus",
+    "microservices_demo",
+    "terraform_aws_vpc"
+  ],
+  "validation_repositories": [
+    "kubernetes_examples"
+  ],
+  "validation_label_type": "weak_labels_review_only",
+  "final_test_status": "sealed_not_loaded",
+  "final_test_sha256": "cff0f85db740a195366fb81cbad26ba34859f40fe12bf8695b263d1cdedb9b67",
+  "selection_rule": "Highest repository-disjoint macro F1; ties broken by critical recall, high/critical recall, macro PR-AUC, and balanced accuracy.",
+  "next_stage": "Use all three model outputs in the hybrid deterministic-rule engine, while retaining the selected model as the primary learned classifier."
+}

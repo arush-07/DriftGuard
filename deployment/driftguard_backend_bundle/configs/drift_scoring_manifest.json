@@ -1,0 +1,113 @@
+{
+  "created_at_utc": "2026-07-19T22:53:01.307597+00:00",
+  "engine_name": "DriftGuard Cumulative Drift Scoring Engine",
+  "source_hybrid_manifest": "outputs\\hybrid_engine\\manifests\\hybrid_engine_manifest.json",
+  "scoring_settings": {
+    "class_order": [
+      "benign",
+      "low",
+      "medium",
+      "high",
+      "critical"
+    ],
+    "severity_anchors": {
+      "benign": 5.0,
+      "low": 25.0,
+      "medium": 50.0,
+      "high": 75.0,
+      "critical": 95.0
+    },
+    "drift_bands": {
+      "stable": {
+        "minimum": 0.0,
+        "maximum_exclusive": 15.0
+      },
+      "watch": {
+        "minimum": 15.0,
+        "maximum_exclusive": 35.0
+      },
+      "concerning": {
+        "minimum": 35.0,
+        "maximum_exclusive": 60.0
+      },
+      "high": {
+        "minimum": 60.0,
+        "maximum_exclusive": 80.0
+      },
+      "critical": {
+        "minimum": 80.0,
+        "maximum_exclusive": 100.000001
+      }
+    },
+    "band_to_label": {
+      "stable": "benign",
+      "watch": "low",
+      "concerning": "medium",
+      "high": "high",
+      "critical": "critical"
+    },
+    "score_weights": {
+      "decision_anchor": 0.55,
+      "expected_probability_risk": 0.45
+    },
+    "consensus_bonus": {
+      "two_critical_votes": 8.0,
+      "two_high_critical_votes": 5.0,
+      "supported_single_critical_vote": 3.0
+    },
+    "operation_bonus": {
+      "security_relevant_removal": 4.0,
+      "high_risk_addition": 2.0
+    },
+    "supported_critical_probability": 0.45,
+    "commit_score_weights": {
+      "maximum_change_score": 0.5,
+      "top_three_mean_score": 0.3,
+      "risk_mass_score": 0.2
+    },
+    "file_pressure_half_life_days": 90.0,
+    "repository_pressure_half_life_days": 45.0,
+    "event_exposure_weight": 0.65,
+    "minimum_event_score_for_pressure": 10.0,
+    "operational_review_queue_size": 1000,
+    "hotspot_file_count": 100,
+    "scoring_policy": "Fixed before final-test evaluation. Validation labels are excluded from scoring inputs."
+  },
+  "validation_records": 7628,
+  "validation_labeled_records": 7040,
+  "validation_evaluation": {
+    "labeled_records": 7040,
+    "accuracy": 0.7159090909090909,
+    "balanced_accuracy": 0.7066293158258142,
+    "macro_f1": 0.41551913830863646,
+    "weighted_f1": 0.7415332614850556,
+    "severity_rank_correlation": 0.5005158653479159,
+    "mean_absolute_anchor_error": 9.286159881726832,
+    "critical_precision": 0.12037037037037036,
+    "critical_recall": 0.5,
+    "critical_f1": 0.19402985074626866,
+    "high_critical_precision": 0.20648967551622419,
+    "high_critical_recall": 0.8433734939759037,
+    "high_critical_f1": 0.33175355450236965
+  },
+  "score_interpretation": {
+    "change_risk_score": "Estimated security and operational risk for one field-level configuration change.",
+    "score_confidence": "Evidence confidence based on model confidence, model agreement, and deterministic-rule support.",
+    "uncertainty_score": "Normalized probability entropy. Higher values indicate less decisive model output.",
+    "cumulative_drift_pressure": "A bounded and time-decayed aggregation of recent drift events. It is not proof that an earlier configuration issue remains active."
+  },
+  "output_files": {
+    "field_scores": "outputs\\drift_scoring\\predictions\\field_level_drift_scores.csv.gz",
+    "commit_scores": "outputs\\drift_scoring\\tables\\commit_drift_scores.csv.gz",
+    "file_timeline": "outputs\\drift_scoring\\timelines\\file_drift_timeline.csv.gz",
+    "repository_timeline": "outputs\\drift_scoring\\timelines\\repository_drift_timeline.csv.gz",
+    "repository_snapshot": "outputs\\drift_scoring\\tables\\current_repository_drift_snapshot.csv",
+    "operational_review_queue": "outputs\\drift_scoring\\manual_review\\operational_drift_review_queue.csv"
+  },
+  "final_test": {
+    "status": "SEALED_NOT_LOADED",
+    "sha256": "cff0f85db740a195366fb81cbad26ba34859f40fe12bf8695b263d1cdedb9b67",
+    "file_path": "C:\\Users\\Lenovo\\Desktop\\DriftGuard\\data\\clean\\test_final_evaluation_only.csv.gz"
+  },
+  "next_stage": "Export the frozen models, rule engine, scoring configuration, and inference API."
+}

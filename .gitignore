@@ -1,0 +1,76 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+driftguard_env/
+
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+credentials*.json
+secrets*.json
+
+# Editors and operating system
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs and caches
+logs/
+*.log
+tmp/
+temp/
+.cache/
+huggingface_cache/
+transformers_cache/
+torch_cache/
+wandb/
+runs/
+checkpoints/
+
+# Raw and processed datasets
+data/
+datasets/
+
+# External cloned repositories
+repositories/
+repos/
+external_repositories/
+cloned_repositories/
+
+# Root training model artifacts
+models/
+
+# Large models inside the deployment bundle
+deployment/driftguard_backend_bundle/models/
+
+# Complete deployment ZIP
+deployment/driftguard_backend_bundle.zip
+
+# Other archives
+*.zip
+*.7z
+*.rar
+*.tar
+*.tar.gz
+*.tgz
+
+# Generated bulky outputs
+outputs/

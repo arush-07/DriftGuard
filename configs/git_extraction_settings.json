@@ -1,0 +1,7 @@
+{
+  "force_reextract": false,
+  "max_commits_per_repository": null,
+  "exclude_merge_commits": true,
+  "maximum_file_size_bytes": 1000000,
+  "retain_source_contents": true
+}

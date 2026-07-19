@@ -1,0 +1,27 @@
+{
+  "project_name": "DriftGuard",
+  "random_state": 42,
+  "config_extensions": [
+    ".cfg",
+    ".conf",
+    ".hcl",
+    ".ini",
+    ".json",
+    ".properties",
+    ".tf",
+    ".tfvars",
+    ".toml",
+    ".yaml",
+    ".yml"
+  ],
+  "config_filenames": [
+    "ansible.cfg",
+    "docker-compose.yaml",
+    "docker-compose.yml",
+    "dockerfile",
+    "httpd.conf",
+    "nginx.conf"
+  ],
+  "max_file_size_bytes": 1000000,
+  "created_at_utc": "2026-07-19T18:39:09.616100+00:00"
+}

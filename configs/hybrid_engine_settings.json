@@ -1,0 +1,29 @@
+{
+  "class_order": [
+    "benign",
+    "low",
+    "medium",
+    "high",
+    "critical"
+  ],
+  "risk_rank": {
+    "benign": 0,
+    "low": 1,
+    "medium": 2,
+    "high": 3,
+    "critical": 4
+  },
+  "model_weights": {
+    "structured": 0.4,
+    "transformer": 0.35,
+    "text_baseline": 0.25
+  },
+  "two_model_high_critical_vote_rank": "high",
+  "single_critical_support_probability": 0.45,
+  "low_confidence_threshold": 0.5,
+  "large_risk_spread_threshold": 2,
+  "manual_review_queue_size": 750,
+  "hybrid_score_boost": 0.35,
+  "production_variant": "safety_hybrid",
+  "selection_policy": "Fixed safety architecture. It is not selected by maximizing weak-label validation performance."
+}
