@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DriftGuard - A Configuration Compliance Intelligence Platform for tracking, identifying, and scoring configuration drift on systems and clusters.">
+  <title>DriftGuard // Configuration Drift Intelligence Platform</title>
+  
+  <!-- Core stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/cyber_whale.jpg">
+</head>
+<body>
+
+  <!-- Background Layer -->
+  <div class="bg-gradient-overlay"></div>
+  <div class="bg-grid"></div>
+
+  <!-- 1. AUTHENTICATION CONTAINER (LOGIN / SIGNUP) -->
+  <div id="auth-container" class="login-container">
+    <div class="glass-panel login-card" style="display: flex; max-width: 900px; width: 100%; min-height: 520px; padding: 0; overflow: hidden; border-color: rgba(255, 255, 255, 0.08);">
+      
+      <!-- Left side: Cyber Whale Hero Banner (Hidden on mobile) -->
+      <div style="flex: 1; position: relative; background: #000; overflow: hidden; display: flex; align-items: center; justify-content: center;" id="auth-banner-side">
+        <img src="assets/cyber_whale.jpg" alt="Futuristic Neon Cyber Whale swimming in a digital ocean of code matrices" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
+        <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(7, 9, 19, 0.95), transparent); padding: 30px; text-align: left;">
+          <h2 style="font-family: var(--font-display); font-weight: 800; font-size: 1.6rem; color: #fff; letter-spacing: -0.01em;" class="text-glow-pink">DriftGuard Intelligence</h2>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 6px; line-height: 1.4;">
+            Automated configuration compliance scoring and AI-driven drift classification.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right side: Auth Form Pane -->
+      <div style="flex: 1.1; padding: 40px; display: flex; flex-direction: column; justify-content: center; background: rgba(12, 15, 29, 0.85);">
+        
+        <!-- Login Form -->
+        <form id="login-form" autocomplete="on">
+          <h1 class="brand-title">DriftGuard</h1>
+          <p class="brand-subtitle">Sign in to your configuration intelligence logs</p>
+          
+          <div id="login-error" style="color: var(--color-critical); font-size: 0.85rem; margin-bottom: 15px; font-weight: 600;"></div>
+
+          <div class="form-group">
+            <label for="login-email" class="form-label">Email Address</label>
+            <input type="email" id="login-email" class="form-input" required placeholder="admin@driftguard.io" value="admin@driftguard.io" autocomplete="username">
+          </div>
+
+          <div class="form-group">
+            <label for="login-password" class="form-label">Password</label>
+            <input type="password" id="login-password" class="form-input" required placeholder="••••••••" value="admin123" autocomplete="current-password">
+          </div>
+
+          <button type="submit" class="btn-primary" style="margin-top: 10px;">Sign In</button>
+
+          <p style="margin-top: 24px; font-size: 0.85rem; color: var(--text-secondary); text-align: center;">
+            Don't have an account? <span id="toggle-signup" style="color: var(--neon-pink); cursor: pointer; font-weight: 600;">Create one</span>
+          </p>
+          
+          <div style="margin-top: 20px; padding: 10px; background: rgba(255, 255, 255, 0.02); border-radius: 6px; border: 1px dashed rgba(255, 255, 255, 0.05); font-size: 0.75rem; color: var(--text-muted); text-align: center;">
+            Demo logins: <strong style="color: var(--neon-cyan);">admin@driftguard.io</strong> (pass: <strong style="color: var(--neon-cyan);">admin123</strong>) or <strong style="color: var(--neon-cyan);">viewer@driftguard.io</strong> (pass: <strong style="color: var(--neon-cyan);">viewer123</strong>)
+          </div>
+        </form>
+
+        <!-- Signup Form (Hidden initially) -->
+        <form id="signup-form" style="display: none;" autocomplete="off">
+          <h2 class="brand-title" style="font-size: 1.8rem;">Register Node</h2>
+          <p class="brand-subtitle">Configure compliance credentials</p>
+
+          <div id="signup-error" style="color: var(--color-critical); font-size: 0.85rem; margin-bottom: 15px; font-weight: 600;"></div>
+
+          <div class="form-group">
+            <label for="signup-email" class="form-label">Email Address</label>
+            <input type="email" id="signup-email" class="form-input" required placeholder="operator@company.io" autocomplete="username">
+          </div>
+
+          <div class="form-group">
+            <label for="signup-password" class="form-label">Secure Access Key (Password)</label>
+            <input type="password" id="signup-password" class="form-input" required placeholder="••••••••" autocomplete="new-password">
+          </div>
+
+          <div class="form-group">
+            <label for="signup-role" class="form-label">System Role Assignment</label>
+            <select id="signup-role" class="filter-select w-full" style="background: rgba(7, 9, 19, 0.6); padding: 12px 16px;">
+              <option value="viewer">Viewer (Read-Only Compliance)</option>
+              <option value="admin">Administrator (Trigger Scans & Rollback)</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn-primary" style="margin-top: 10px;">Create Account</button>
+
+          <p style="margin-top: 24px; font-size: 0.85rem; color: var(--text-secondary); text-align: center;">
+            Already registered? <span id="toggle-login" style="color: var(--neon-pink); cursor: pointer; font-weight: 600;">Sign in</span>
+          </p>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. MAIN APPLICATION DASHBOARD LAYOUT -->
+  <div id="app-layout" class="app-container" style="display: none;">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="avatar" style="width:32px; height:32px; font-size: 0.95rem;">DG</div>
+        <span class="sidebar-logo">DriftGuard</span>
+      </div>
+      
+      <ul class="sidebar-menu" id="sidebar-menu">
+        <!-- Injected via app.js -->
+      </ul>
+      
+      <div class="sidebar-footer">
+        <div class="user-profile">
+          <div class="avatar" id="user-avatar-badge">O</div>
+          <div class="user-info">
+            <div class="user-email" id="user-email">operator@driftguard.io</div>
+            <span id="user-role" class="user-role-badge role-viewer">Viewer</span>
+          </div>
+        </div>
+        <button class="btn-scan" id="logout-btn" style="background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.2); color: #fca5a5; width: 100%; justify-content: center; font-size: 0.8rem; padding: 6px;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-out"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" x2="9" y1="12" y2="12"/></svg>
+          Disconnect Session
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main View Section -->
+    <main class="main-content">
+      
+      <!-- Top header panel -->
+      <header class="top-header">
+        <div class="header-title-container">
+          <span class="page-title">Compliance Intelligence Dashboard</span>
+          <div class="connection-status">
+            <div class="status-dot" id="status-dot"></div>
+            <span id="status-text">Detecting API status...</span>
+          </div>
+        </div>
+
+        <div class="header-controls">
+          <!-- Role Quick Switcher (For POC Hackathon Demos) -->
+          <div class="role-quick-switch" title="Demo Tool: Toggle RBAC levels dynamically">
+            <button class="switch-btn" id="role-btn-viewer">Viewer Mode</button>
+            <button class="switch-btn" id="role-btn-admin">Admin Mode</button>
+          </div>
+
+          <!-- Trigger Scan Button -->
+          <button class="btn-scan" id="scan-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-refresh-cw"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M16 16h5v5"/></svg>
+            Scan Git Baseline
+          </button>
+        </div>
+      </header>
+
+      <!-- View Container injected by app.js router -->
+      <div id="view-content" class="view-container">
+        <!-- Injected Panel View -->
+      </div>
+      
+    </main>
+  </div>
+
+  <!-- 3. DRILL DOWN COMPLIANCE DETAIL MODAL -->
+  <div id="finding-modal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modal-title-text">Compliance Incident Detail</h3>
+        <button class="close-btn" id="modal-close">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+      <div class="modal-body" id="modal-body-content">
+        <!-- Injected dynamic data -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. ACTIVE SCANNER PROGRESS OVERLAY -->
+  <div id="scan-overlay" class="scanner-overlay">
+    <div class="glass-panel scanner-box" style="border-color: rgba(0, 240, 255, 0.25); background: rgba(7, 9, 19, 0.95); box-shadow: 0 0 30px rgba(0, 240, 255, 0.1);">
+      <div class="scanner-laser"></div>
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="var(--neon-cyan)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-radar" style="animation: pulse-success 2s infinite;"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/><path d="M12 2v20"/><path d="M2 12h20"/></svg>
+      
+      <h3 style="font-family: var(--font-display); font-weight: 800; font-size: 1.3rem; margin-top: 15px; color: #fff;" class="text-glow-cyan">Ingesting Git Tree Diffs</h3>
+      <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 4px;">Evaluating AST configuration files for compliance drift...</p>
+      
+      <div class="scanner-progress-bar">
+        <div class="scanner-progress-fill" id="scan-progress-fill"></div>
+      </div>
+      <div style="font-family: monospace; font-size: 0.8rem; color: var(--neon-cyan); margin-top: 6px; font-weight: 700;" id="scan-percent">0%</div>
+    </div>
+    
+    <div class="glass-panel" style="width: 500px; max-height: 200px; margin-top: 20px; padding: 15px; border-color: rgba(255,255,255,0.06); background: rgba(12, 15, 29, 0.85); overflow-y: auto; display: flex; flex-direction: column;" id="scan-log">
+      <!-- Live logs injected here -->
+    </div>
+  </div>
+
+  <!-- JavaScript Modules -->
+  <script src="api.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
